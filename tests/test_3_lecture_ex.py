@@ -26,6 +26,11 @@ class TestChap3Expl(unittest.TestCase):
         print(ch3expl.dec_int_to_binary(19))
         print(ch3expl.dec_int_to_binary(3))
 
+    def test_dec_flt_to_binary(self):
+        print(ch3expl.dec_flt_to_binary(0.375))
+        print(ch3expl.dec_flt_to_binary(0.333))
+        print(ch3expl.dec_flt_to_binary(0.1))
+
 
 # Not reached the chapter about functions yet (chapter4)
 # So most of the exercises are with print statements

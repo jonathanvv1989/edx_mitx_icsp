@@ -133,3 +133,27 @@ def dec_int_to_binary(dec_int):
         res = "-" + res
 
     return res
+
+
+def dec_flt_to_binary(dec_flt):
+    """
+    input: a decimal float
+    output: binary representation of dec_flt
+    """
+    # Find power of 2 converting to whole number
+    p = 0
+    while (dec_flt*2**p) % 1 != 0:  # not a whole number
+        print("Remainder: " + str((dec_flt*2**p)-int(dec_flt*2**p)))
+        p += 1
+
+    # convert int to binary
+    dec_int = int(dec_flt*2**p)
+    print("Int converter is: " + str(p) + " to int: " + str(dec_int))
+    res = dec_int_to_binary(dec_int)
+
+    # shift binary to right based on power of 2 p introduced in step 1
+    for _ in range(p-len(res)):  # add 0 after the decimal places
+        res = '0' + res
+    res = res[0:-p] + "." + res[-p:]
+
+    return res
