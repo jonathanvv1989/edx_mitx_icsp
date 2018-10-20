@@ -107,3 +107,29 @@ def cube_root_approx(cube):
         return "Failed on cube root of " + str(cube)
     else:
         return guess
+
+
+def dec_int_to_binary(dec_int):
+    """
+    input: a decimal integer
+    output: binary repesentation of dec_int
+    """
+    # check if the int provided in negative
+    if dec_int < 0:
+        is_neg = True
+        dec_int = abs(dec_int)
+    else:
+        is_neg = False
+    # quick escape if the number is 0
+    if dec_int == 0:
+        return "0"
+    # convert dec_int to binary
+    res = ""
+    while dec_int > 0:
+        res = str(dec_int % 2) + res
+        dec_int = dec_int // 2
+    # final output
+    if is_neg:
+        res = "-" + res
+
+    return res
