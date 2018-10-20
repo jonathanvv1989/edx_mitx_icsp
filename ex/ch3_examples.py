@@ -23,6 +23,37 @@ def sqrt_int(x):
             return "not a perfect square"
 
 
+def sqrt_approx_bs(square):
+    """
+    input: a square
+    output: square root aproximation using bisection search
+    """
+    # parameters
+    epsilon = 0.01
+    low = 1
+    high = square
+    nb_guesses = 0
+
+    # Use bisection search to compute square root
+    ans = (low + high)/2.0
+    while abs(ans**2 - square) >= epsilon:
+        print(
+            "low = " + str(low) + " high = " + str(high) +
+            " ans = " + str(ans)
+        )
+        nb_guesses += 1
+        if ans**2 < square:
+            low = ans
+        else:
+            high = ans
+        ans = (low + high)/2.0
+
+    # Print final output
+    print("nb of guesses = " + str(nb_guesses))
+
+    return ans
+
+
 def a_an_trick(a_string, e_level):
     """
     input1: word to cheer for
@@ -60,14 +91,14 @@ def cube_root_approx(cube):
     """
     # parameters
     epsilon = 0.01
-    increment = 0.0001
+    step = 0.001
     # other variables
     nb_guesses = 0
     guess = 0.0
 
     # approximate cube root
-    while abs(guess**3 - cube) <= epsilon:
-        guess += increment
+    while abs(guess**3 - cube) >= epsilon and guess <= cube:
+        guess += step
         nb_guesses += 1
 
     # display solution
