@@ -54,6 +54,28 @@ def sqrt_approx_bs(square):
     return ans
 
 
+def sqrt_approx_nr(square):
+    """
+    input: a square
+    output: square root approximation using Newton-Raphson
+    """
+    # parameters
+    epsilon = 0.01
+    nb_guesses = 0
+
+    ans = square/2.0  # same start as bs for benchmarking
+    # Use Newton-Raphson to compute square root
+    while abs(ans**2 - square) >= epsilon:
+        nb_guesses += 1
+        ans = ans - (((ans**2) - square)/(2*ans))
+
+    # Print final output and benchmark
+    print("Number of guesses: " + str(nb_guesses))
+    print("Square root of " + str(square) + " is " + str(ans))
+
+    return ans
+
+
 def a_an_trick(a_string, e_level):
     """
     input1: word to cheer for

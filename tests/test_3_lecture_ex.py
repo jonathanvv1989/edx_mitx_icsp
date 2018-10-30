@@ -22,6 +22,11 @@ class TestChap3Expl(unittest.TestCase):
     def test_sqrt_approx_bs(self):
         print(ch3expl.sqrt_approx_bs(25))
 
+    def test_sqrt_approx_nr(self):
+        print(ch3expl.sqrt_approx_nr(24))
+        print(ch3expl.sqrt_approx_nr(25))
+        print(ch3expl.sqrt_approx_nr(40))
+
     def test_dec_to_binary(self):
         print(ch3expl.dec_int_to_binary(19))
         print(ch3expl.dec_int_to_binary(3))
