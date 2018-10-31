@@ -28,3 +28,27 @@ def guess_the_nber():
             print("Sorry, I did not understand your input.")
 
     return "Game over. Your secret number was: " + str(g)
+
+
+# Problem set 1
+def credit_card_min_balance(
+    balance,
+    annualInterestRate,
+    monthlyPaymentRate
+):
+    """
+    Input1: balance at the start of the year
+    Input2: annual interest rate
+    Input3: mini month payment rate
+    Output: final balance if only pay minimum every month
+    """
+    rm_balance = balance
+    monthly_int_rate = annualInterestRate/12.0
+    for m in range(1, 13):
+        rm_balance *= (1 + monthly_int_rate) * (1 - monthlyPaymentRate)
+
+    return "Remaining balance: " + str(round(rm_balance, 2))
+
+
+# Problem set 2
+# Problem set 3

@@ -45,6 +45,10 @@ class TestChap3Ex(unittest.TestCase):
     def test_guess_the_nber(self):
         print(ch3ex.guess_the_nber())
 
+    def test_credit_card_min_balance(self):
+        print(ch3ex.credit_card_min_balance(42, 0.2, 0.04))
+        print(ch3ex.credit_card_min_balance(484, 0.2, 0.04))
+
 
 if __name__ == "__main__":
     unittest.main()
