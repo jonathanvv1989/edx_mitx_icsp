@@ -49,6 +49,20 @@ class TestChap3Ex(unittest.TestCase):
         print(ch3ex.credit_card_min_balance(42, 0.2, 0.04))
         print(ch3ex.credit_card_min_balance(484, 0.2, 0.04))
 
+    def test_credit_card_min_pmt_ee(self):
+        print(ch3ex.credit_card_min_pmt_ee(3329, 0.2), 310)
+        print(ch3ex.credit_card_min_pmt_ee(4773, 0.2), 440)
+        print(ch3ex.credit_card_min_pmt_ee(3926, 0.2), 360)
+        print(ch3ex.credit_card_min_pmt_ee(214, 0.18), 20)
+        print(ch3ex.credit_card_min_pmt_ee(4841, 0.04), 420)
+        print(ch3ex.credit_card_min_pmt_ee(3447, 0.15), 310)
+
+    def test_credit_card_min_pmt_bs(self):
+        print(ch3ex.credit_card_min_pmt_bs(320000, 0.2), 29157.09)
+        print(ch3ex.credit_card_min_pmt_bs(999999, 0.18), 90325.03)
+        print(ch3ex.credit_card_min_pmt_bs(408725, 0.18), 36918.13)
+        print(ch3ex.credit_card_min_pmt_bs(422979, 0.15), 37706.05)
+
 
 if __name__ == "__main__":
     unittest.main()
