@@ -19,8 +19,17 @@ class TestChap4Expl(unittest.TestCase):
         print(ch4expl.g(ch4expl.x))
         print(ch4expl.x)
         # Example 3: generate error cannot modify global scope
-        print(ch4expl.h(ch4expl.x))
-        print(ch4expl.x)
+        # print(ch4expl.h(ch4expl.x))
+        # print(ch4expl.x)
+
+    def test_mult_iter(self):
+        print(ch4expl.mult_iter(2, 4), 8)
+
+    def test_mult_rec(self):
+        print(ch4expl.mult_rec(2, 4), 8)
+
+    def test_factorial(self):
+        print(ch4expl.factorial(5), 120)
 
 
 class TestChap4Ex(unittest.TestCase):
@@ -40,6 +49,16 @@ class TestChap4Ex(unittest.TestCase):
         self.assertEqual(ch4ex.odd(2), False)
         self.assertEqual(ch4ex.odd(3), True)
         self.assertEqual(ch4ex.odd(15), True)
+
+    def test_iterPower(self):
+        self.assertEqual(ch4ex.iterPower(2, 2), 4)
+        self.assertEqual(ch4ex.iterPower(2, 3), 8)
+        self.assertEqual(ch4ex.iterPower(5.5, 4), 915.0625)
+
+    def test_recurPower(self):
+        self.assertEqual(ch4ex.recurPower(2, 2), 4)
+        self.assertEqual(ch4ex.recurPower(2, 3), 8)
+        self.assertEqual(ch4ex.recurPower(5.5, 4), 915.0625)
 
 
 if __name__ == "__main__":

@@ -31,3 +31,32 @@ def g(y):
 # Below function would generate UnboundLocalError
 # def h(y):
 #     x += 1
+
+
+# Recursion example 1: multiplication
+# Iteration by addition
+def mult_iter(a, b):
+    res = 0
+    while b > 0:
+        res += a
+        b -= 1
+
+    return res
+
+
+def mult_rec(a, b):
+    if b == 1:
+        print("I am in base case, b is: " + str(b))
+        return a
+    else:
+        print("I am in recursive case, b is " + str(b))
+        return a + mult_rec(a, b-1)
+
+
+def factorial(n):
+    if n == 1:
+        print("I am in base case, n is: " + str(n))
+        return 1
+    else:
+        print("I am in recursive case, n is: " + str(n))
+        return n*factorial(n-1)
