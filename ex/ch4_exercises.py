@@ -65,3 +65,36 @@ def recurPower(base, exp):
         return 1
     else:
         return base * recurPower(base, exp - 1)
+
+
+# Greatest Common Divisor (iterative version)
+def gcdIter(a, b):
+    '''
+    a, b: positive integers
+
+    returns: a positive integer, the greatest common divisor of a & b.
+    '''
+    guess = min(a, b)
+    while guess > 1:
+        if (
+            a % guess == 0 and
+            b % guess == 0
+        ):
+            return guess
+        guess -= 1
+
+    return 1  # default answer if failed to retrieve other value
+
+
+def gcdRecur(a, b):
+    '''
+    a, b: positive integers
+    returns: a positive integer, the greatest common divisor of a & b.
+    Implement Euclidean Algorithm
+    https://en.wikipedia.org/wiki/Euclidean_algorithm
+    '''
+    ans = max(a, b) % min(a, b)
+    if ans == 0:
+        return min(a, b)
+    else:
+        return gcdRecur(min(a, b), ans)

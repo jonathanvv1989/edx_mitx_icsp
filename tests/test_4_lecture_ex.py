@@ -63,6 +63,21 @@ class TestChap4Ex(unittest.TestCase):
         self.assertEqual(ch4ex.recurPower(2, 3), 8)
         self.assertEqual(ch4ex.recurPower(5.5, 4), 915.0625)
 
+    def test_gcdIter(self):
+        self.assertEqual(ch4ex.gcdIter(12, 2), 2)
+        self.assertEqual(ch4ex.gcdIter(6, 12), 6)
+        self.assertEqual(ch4ex.gcdIter(9, 12), 3)
+        self.assertEqual(ch4ex.gcdIter(12, 17), 1)
+        self.assertEqual(ch4ex.gcdIter(100, 1), 1)
+
+    def test_gcdRecur(self):
+        self.assertEqual(ch4ex.gcdRecur(1071, 462), 21)  # wikipedia example
+        self.assertEqual(ch4ex.gcdRecur(12, 2), 2)
+        self.assertEqual(ch4ex.gcdRecur(6, 12), 6)
+        self.assertEqual(ch4ex.gcdRecur(9, 12), 3)
+        self.assertEqual(ch4ex.gcdRecur(12, 17), 1)
+        self.assertEqual(ch4ex.gcdRecur(100, 1), 1)
+
 
 if __name__ == "__main__":
     unittest.main()
