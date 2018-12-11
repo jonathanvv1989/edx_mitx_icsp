@@ -31,6 +31,9 @@ class TestChap4Expl(unittest.TestCase):
     def test_factorial(self):
         print(ch4expl.factorial(5), 120)
 
+    def test_tower_h(self):
+        print(ch4expl.tower_h(3, "P2", "P1", "P3"))
+
 
 class TestChap4Ex(unittest.TestCase):
     def test_square(self):

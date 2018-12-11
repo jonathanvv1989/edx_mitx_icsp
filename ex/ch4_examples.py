@@ -60,3 +60,20 @@ def factorial(n):
     else:
         print("I am in recursive case, n is: " + str(n))
         return n*factorial(n-1)
+
+
+# Tower of Hanoi
+def tower_h(n, fr, to, spare):
+    """
+    n: int, size of stack to move
+    from: str, starting position of the stack
+    to: str, target position of the stack
+    spare: str, spare position
+    returns the instruction to move stack to targe spike
+    """
+    if n == 1:
+        print("move from " + str(fr) + " to " + str(to))
+    else:
+        tower_h(n-1, fr, spare, to)
+        tower_h(1, fr, to, spare)
+        tower_h(n-1, spare, to, fr)
